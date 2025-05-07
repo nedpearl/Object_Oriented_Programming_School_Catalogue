@@ -32,6 +32,13 @@ class PrimarySchool(School):
         parent_repr = super().__repr__()
         return parent_repr + " The pick up policy is: {pickupPolicy}.".format(pickupPolicy = self.pickupPolicy)
 
+class MiddleSchool(School):
+    def __init__(self, name, numberOfStudents):
+        super().__init__(name, 'middle', numberOfStudents)
+    
+    def __repr__(self):
+        return super().__repr__()
+
 
 class HighSchool(School):
     def __init__(self, name, numberOfStudents, sportsTeams):
@@ -49,12 +56,12 @@ class HighSchool(School):
 test_school = School('Abbott', 'Middle', 100)
 test_primary = PrimarySchool('Ateneo', 176, 'pick up at 3:30pm')
 test_high = HighSchool('Xavier', 300, ['Basketball', 'Volleyball', 'Tennis'])
+test_middle = MiddleSchool('La Salle', 130)
 
-print(test_high.get_name())
-print(test_high.get_level())
-print(test_high.get_numberOfStudents())
-print(test_high.get_sportsTeams())
+print(test_middle.get_name())
+print(test_middle.get_level())
+print(test_middle.get_numberOfStudents())
 
-print(test_high.set_numberOfStudents(350))
+print(test_middle.set_numberOfStudents(350))
 
-print(test_high)
+print(test_middle)
